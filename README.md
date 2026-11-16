@@ -43,7 +43,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM、Real2Sim�
 - **期刊**：Science Robotics、T-RO、IJRR、RA-L、T-ASE、JFR、TPAMI、IJCV
 - **會議**（接收論文公布時）：RSS、CoRL、ICRA、IROS、CVPR、ICCV、ECCV、3DV、SIGGRAPH、WACV、NeurIPS、ICLR、ICML；EMNLP、ACL（只看 VLN）
 
-最後更新：2026-11-13
+最後更新：2026-11-16
 
 ## 目錄
 
@@ -191,6 +191,8 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM、Real2Sim�
 
 | 日期 | 論文 | 機構 | 重點 | 數據 | 程式碼 | 來源 |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-11 | [Attention-Aware Cost-map Tuning](https://arxiv.org/abs/2611.16725) | 東北大學 | 用 3D 骨架即時分類行人是否分心看手機，對分心者動態加大 cost-map 安全邊界，不只靠軌跡預測 | 12 人 252 次使用者實驗，流暢度（p=0.003）與可預測性（p=0.034）優於 LiDAR-only 與純軌跡預測，行進時間未增加 | 未公開 | RO-MAN 2026 |
+| 2026-11 | [VINE](https://arxiv.org/abs/2611.16282) | 筑波大學 | 用監督式學習從外部固定相機影像估計視角不變的障礙物地圖，再交給 PPO 或 A*，解決 PPO 直接吃外部影像學不起來 | 模擬中相機位置隨機，導航成功率仍高於使用車載相機的 PPO | 未公開 | ISSI 2027 |
 | 2026-11 | [MessyNav](https://arxiv.org/abs/2611.07417) · [專案頁](https://messynav.github.io) | UC Berkeley / Stanford | VLM 先做 affordance 推理決定推開、拿起或避開擋路物件，再做任務規劃，零樣本互動式導航 | 移動操作機實機成功率比最強基線高 27 pp | 未公開 | CoRL 2026 |
 | 2026-11 | [WAM-Nav](https://arxiv.org/abs/2606.04907) | CASIA / Nanjing Univ. / NUDT | 共享 DiT 做非對稱聯合擴散，同時生成長時域動作與短時域潛在視覺預想，單一策略支援影像目標、點目標與無目標探索 | ClutterScenes、InternScenes 影像目標 SR +15.7%、點目標 +3.3%；實機平均成功率 85% | [GitHub](https://github.com/CoRL-2026-WAM-Nav/WAM-Nav) | CoRL 2026 |
 | 2026-11 | [G2-Nav](https://arxiv.org/abs/2607.16956) | NTU / VinUniversity | VLM 不直接規劃，而是把社交情境寫進 vision-language costmap，另驗證上游追蹤並加高頻安全檢查 | 非結構化環境實機社交導航 | [GitHub](https://github.com/centiLinda/G2-Nav) | CoRL 2026 |
