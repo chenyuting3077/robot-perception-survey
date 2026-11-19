@@ -23,7 +23,7 @@ description: 更新這個論文整理 repo 時使用：定期（每週一、四�
 3. 當年度論文引用還在累積，`THRESHOLD` 沒有該年門檻，候選只用來提醒：達 Star 或 HF 條件才進 `classics.csv`，否則符合 `sources.md` 篩選條件的放「最新論文」。用 `scripts/enrich.py` 補資料，寫進 `data/classics.csv`；使用者推薦的一律收，`tags` 加 `推薦`。
 4. 「最新論文」中已達引用或 Star 條件的移到 `classics.csv`，並從主題檔刪除該列。
 5. 跑 `python3 scripts/fetch_metrics.py` 刷新引用數、star、HF 按讚數，再跑 `python3 scripts/check_data.py`，處理「刊登處待確認」的警告。範圍含重要論文、封存區與主題檔的全部最新論文（含 README 已不顯示的舊列），被接收的要改原列。arXiv 備註常沒寫接收資訊，所以也要照 `sources.md` 比對會議接收名單。
-6. 一項收錄條件都不符合的移出（條件見 README「怎樣算重要論文」，門檻在 `scripts/harvest.py` 的 `THRESHOLD`）。只有 arXiv 的論文須來自 `sources.md` 第 0 步主要名單內機構（擴充追蹤名單不算），首次公開超過一年仍只有 arXiv 的也移出；官方 repo star ≥ 500 或 `推薦` 的除外。移出前先確認有沒有已被接收但 venue 沒更新。
+6. 一項收錄條件都不符合的移出（條件見 README「怎樣算重要論文」，門檻在 `scripts/harvest.py` 的 `THRESHOLD`）。只有 arXiv 的論文須來自 `sources.md` 第 0 步主要名單內機構（擴充追蹤名單不算），首次公開超過一年仍只有 arXiv 的也移出；官方 repo star ≥ 500 或標 `推薦`、`收藏` 的除外。移出前先確認有沒有已被接收但 venue 沒更新。
 7. 跑 `python3 scripts/prune.py` 看會封存哪些論文，確認後加 `--apply`。封存前先查候選論文的官方 repo：2026-11 試算時 86 篇候選有 61 篇 repo 空白，其中 20 篇其實查得到，star 被誤算成 0。封存區論文的引用或 star 回升到條件內時，移回 `classics.csv`。
 8. 產生 README，開 PR。
 
@@ -38,7 +38,7 @@ description: 更新這個論文整理 repo 時使用：定期（每週一、四�
   - `repo` 只填官方 repo（`owner/name`），沒有留空；`project` 填專案頁，沒有留空。
   - `sub`：slam、reconstruction 必填子分類，可用值在 `scripts/check_data.py` 的 `SUBS`；其他主題留空。
   - `award`：標 `獲獎` 的要寫是哪個獎，`得獎：Best Paper`、`入圍：Best Systems Paper` 或 `oral`，多個用「；」分隔；得獎含 honorable mention，入圍含 finalist、award candidate。獎項與 venue 不同場合（RA-L 論文在 ICRA 得獎）時寫上會議，例如 `得獎：ICRA 2021 Best Student Paper`。查不到的留空，`check_data.py` 會列出。
-  - `tags` 是人工判斷的收錄理由：`獲獎`、`基準`、`機構`、`推薦`、`知名`（代表性方法，不封存也不佔上限，使用者指定或封存時發現才加）。「引用」「Star」「HF」由腳本依數據判斷；Science Robotics、T-RO 自動算「獲獎」。
+  - `tags` 是人工判斷的收錄理由：`獲獎`、`基準`、`機構`、`推薦`、`知名`（代表性方法，不封存也不佔上限，使用者指定或封存時發現才加）、`收藏`（使用者要放進個人收藏頁 `docs/favorites.md` 的，不顯示在理由欄、不封存）。「引用」「Star」「HF」由腳本依數據判斷；Science Robotics、T-RO 自動算「獲獎」。
 - 刊登處（`venue` 與「來源」欄）以 arXiv 的 Comments／journal_ref、專案頁、會議論文集為準，查不到就寫 `arXiv`，不憑記憶填。格式：會議或期刊縮寫加年份（`RSS 2026`、`RA-L 2026`）；只有預印本寫 `arXiv`；企業發表寫網站（`NVIDIA Research`），同時有 arXiv 就用頓號並列。會議、期刊名不寫進「重點」。年份以期刊卷號或論文集為準，不用 Semantic Scholar 的 arXiv 年份。
 
 ## 「最新論文」表格欄位
