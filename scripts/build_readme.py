@@ -52,7 +52,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM、Real2Sim�
 
 候選由 `scripts/harvest.py` 依主題關鍵字從 Semantic Scholar 撈出，再人工確認相關性；頂會得獎名單另外逐一查官網補收。只有 arXiv 預印本的，只收[定期追蹤的來源](#定期追蹤的來源)的企業與[實驗室主要名單](docs/labs.md#主要名單)內機構的論文，且首次公開超過一年仍未刊登就移出；官方 repo star ≥ 500 或人工推薦的除外。分級：**奠基** 引用達門檻 4 倍、star ≥ 10k，或 2021 年前的開創性論文；**主流** 達引用或 Star 條件；其餘（只符合獲獎、基準、機構、推薦、知名）為**新興**。同一級內依分數（「引用 ÷ 該年門檻」加「star ÷ 500」）由高到低排序。「年」是 arXiv 首次公開年份，「來源」是正式刊登的會議或期刊。
 
-為了控制篇數，符合下列條件的論文移到[封存區](docs/archive.md)，不刪除；標「推薦」「基準」「知名」的不封存。
+為了控制篇數，符合下列條件的論文移到[封存區](docs/archive.md)，不刪除；標「推薦」「基準」「知名」「收藏」的不封存。
 
 - 新興論文公開滿兩個年度，引用與 star 都仍未滿 100。
 - 主題超過 30 篇時，封存分數最低的，奠基論文與當年度論文不納入淘汰。
@@ -105,7 +105,8 @@ def reasons(year: int, cites: int, stars: int, upvotes: int, venue: str, tags: s
         out.append("Star")
     if upvotes >= HF_BAR:
         out.append("HF")
-    manual = [t for t in tags.split(";") if t]
+    # 「收藏」只決定是否列進個人收藏頁，不是收錄理由
+    manual = [t for t in tags.split(";") if t and t != "收藏"]
     # 刊在這兩本期刊直接算「獲獎」；頂會最佳論文、oral 要人工標
     if venue.startswith(("Science Robotics", "T-RO")) and "獲獎" not in manual:
         out.append("獲獎")
@@ -215,6 +216,13 @@ def main() -> None:
                       classics_table([r for r in archive if r["topic"] == name and r["reason"] == reason], metrics)]
     (ROOT / "docs" / "archive.md").write_text(DOC_NOTE + "\n\n".join(parts) + "\n")
 
+    favs = [r for r in classics if "收藏" in r["tags"].split(";")]
+    parts = ["# 個人收藏", f"`data/classics.csv` 中 tags 標「收藏」的論文，共 {len(favs)} 篇。"]
+    for title, name, _ in sections:
+        if group := [r for r in favs if r["topic"] == name]:
+            parts += [f"## {title}", classics_table(group, metrics)]
+    (ROOT / "docs" / "favorites.md").write_text(DOC_NOTE + "\n\n".join(parts) + "\n")
+
     trend = latest.split("## 趨勢", 1)[1].split("\n## ", 1)[0].strip()
 
     out = [HEADER, f"最後更新：{updated}\n", "## 目錄\n"]
@@ -224,6 +232,7 @@ def main() -> None:
     out.append("- [月報](#月報)")
     out.append("- [四足與輪足](docs/legged.md)")
     out.append("- [追蹤的實驗室](docs/labs.md)")
+    out.append("- [個人收藏](docs/favorites.md)")
     out.append("- [封存區](docs/archive.md)\n")
     out.append(f"## 本月趨勢（{digests[0].stem}）\n\n{trend}\n")
     out += [f"{s}\n" for _, n, s in sections if n not in PAGES]

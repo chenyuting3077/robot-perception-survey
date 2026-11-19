@@ -18,7 +18,7 @@ semantic-map,2403.17846,HOV-SG,Freiburg,RSS 2024,hovsg/HOV-SG,http://hovsg.githu
 semantic-map,2404.13696,Clio,MIT SPARK,RA-L 2024,MIT-SPARK/Clio,,,,,依任務決定物件粒度的場景圖（information bottleneck）,
 quadruped,2107.04034,RMA,UC Berkeley / CMU,RSS 2021,,https://ashish-kmr.github.io/rma-legged-robots/,,,,快速自適應模組：以本體感知線上估計環境參數,
 quadruped,2109.11978,Learning to Walk in Minutes,ETH,CoRL 2021,leggedrobotics/legged_gym,https://leggedrobotics.github.io/legged_gym/,,,,GPU 大規模平行 RL，幾分鐘訓練出運動策略（legged_gym）,
-quadruped,2201.08117,Perceptive Locomotion in the Wild,ETH,Science Robotics 2022,,,,,,高度圖感知 + 本體感知的注意力融合，ANYmal 野外實機,
+quadruped,2201.08117,Perceptive Locomotion in the Wild,ETH,Science Robotics 2022,,,,推薦;收藏,,高度圖感知 + 本體感知的注意力融合，ANYmal 野外實機,
 quadruped,2204.12876,Elevation Mapping CuPy,ETH,IROS 2022,leggedrobotics/elevation_mapping_cupy,https://leggedrobotics.github.io/elevation_mapping_cupy/,,,,GPU 加速的機器人中心高度圖，多數感知式運動策略的輸入,
 quadruped,2211.07638,Legged Locomotion with Egocentric Vision,CMU / Berkeley,CoRL 2022,,https://vision-locomotion.github.io,,獲獎,得獎：Best Systems Paper,直接用深度影像端到端學運動，不建高度圖,
 quadruped,2212.03238,Walk These Ways,MIT,CoRL 2022,Improbable-AI/walk-these-ways,https://gmargo11.github.io/walk-these-ways/,,,,多樣行為參數化的單一策略，可調步態,

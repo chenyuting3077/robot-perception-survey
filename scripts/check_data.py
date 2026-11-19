@@ -11,7 +11,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-TAGS = {"獲獎", "基準", "機構", "推薦", "知名"}
+TAGS = {"獲獎", "基準", "機構", "推薦", "知名", "收藏"}
 # 得獎含 honorable mention；入圍含 finalist、award candidate；只有 oral 沒有獎項的寫 oral
 AWARD = re.compile(r"(得獎|入圍)：\S.*|oral")
 SUBS = {
