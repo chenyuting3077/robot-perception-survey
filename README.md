@@ -62,6 +62,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM、Real2Sim�
 - [月報](#月報)
 - [四足與輪足](docs/legged.md)
 - [追蹤的實驗室](docs/labs.md)
+- [個人收藏](docs/favorites.md)
 - [封存區](docs/archive.md)
 
 ## 本月趨勢（2026-11）

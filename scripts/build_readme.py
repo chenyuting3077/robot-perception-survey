@@ -105,7 +105,8 @@ def reasons(year: int, cites: int, stars: int, upvotes: int, venue: str, tags: s
         out.append("Star")
     if upvotes >= HF_BAR:
         out.append("HF")
-    manual = [t for t in tags.split(";") if t]
+    # 「收藏」只決定是否列進個人收藏頁，不是收錄理由
+    manual = [t for t in tags.split(";") if t and t != "收藏"]
     # 刊在這兩本期刊直接算「獲獎」；頂會最佳論文、oral 要人工標
     if venue.startswith(("Science Robotics", "T-RO")) and "獲獎" not in manual:
         out.append("獲獎")
@@ -207,6 +208,13 @@ def main() -> None:
                       classics_table([r for r in archive if r["topic"] == name and r["reason"] == reason], metrics)]
     (ROOT / "docs" / "archive.md").write_text(DOC_NOTE + "\n\n".join(parts) + "\n")
 
+    favs = [r for r in classics if "收藏" in r["tags"].split(";")]
+    parts = ["# 個人收藏", f"`data/classics.csv` 中 tags 標「收藏」的論文，共 {len(favs)} 篇。"]
+    for title, name, _ in sections:
+        if group := [r for r in favs if r["topic"] == name]:
+            parts += [f"## {title}", classics_table(group, metrics)]
+    (ROOT / "docs" / "favorites.md").write_text(DOC_NOTE + "\n\n".join(parts) + "\n")
+
     trend = latest.split("## 趨勢", 1)[1].split("\n## ", 1)[0].strip()
 
     out = [HEADER, f"最後更新：{updated}\n", "## 目錄\n"]
@@ -216,6 +224,7 @@ def main() -> None:
     out.append("- [月報](#月報)")
     out.append("- [四足與輪足](docs/legged.md)")
     out.append("- [追蹤的實驗室](docs/labs.md)")
+    out.append("- [個人收藏](docs/favorites.md)")
     out.append("- [封存區](docs/archive.md)\n")
     out.append(f"## 本月趨勢（{digests[0].stem}）\n\n{trend}\n")
     out += [f"{s}\n" for _, n, s in sections if n not in PAGES]

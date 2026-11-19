@@ -2,7 +2,7 @@
 
 - 加論文、擴充重要論文、新增主題時，先用 Skill 工具呼叫 `update-survey`（`.claude/skills/update-survey/`）。
 - 實驗室清單在 `docs/labs.md`，直接改這個檔案。
-- README 與 `docs/legged.md`、`docs/archive.md` 由 `scripts/build_readme.py` 產生，改 `topics/`、`data/`、`digests/` 後重跑，不手改。
+- README 與 `docs/legged.md`、`docs/archive.md`、`docs/favorites.md` 由 `scripts/build_readme.py` 產生，改 `topics/`、`data/`、`digests/` 後重跑，不手改。
 - 一律用繁體中文（台灣用語）；commit message 用英文、conventional 前綴（`docs: ...`）。
 - 範圍：AMR（輪式）、四足、輪足的導航，機器人用得到的視覺、3D 感知、SLAM、Real2Sim，以及 AMR 加手臂（移動操作）的感知。純操作策略與控制、固定手臂模仿學習、純人形全身控制、純自駕不收，除非方法可直接用在上述機體。
 
