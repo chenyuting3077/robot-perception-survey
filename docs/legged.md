@@ -55,6 +55,7 @@
 
 | 日期 | 論文 | 機構 | 重點 | 數據 | 程式碼 | 來源 |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-11 | [ROAM](https://arxiv.org/abs/2611.25215) · [專案頁](https://roam-hiking.github.io) | ETH Zurich | VLM 評估場景風險並替語意標籤指定通行成本，經開放詞彙分割變成即時風險圖，供運動與局部導航兩個 RL 策略使用 | 阿爾卑斯與都會環境公里級路線實機行走，少量人為介入（作者自報） | 未公開 | Science Robotics 2026 |
 | 2026-11 | [Uni-Mo](https://arxiv.org/abs/2606.28237) | Alibaba AMAP | 不經動物動捕：LLM 提動作描述、影片擴散生成機器狗影片、提升成 3D 參考軌跡訓練追蹤策略，加身分一致性損失穩定生成 | 開源 7,488 段（18.5 小時）動作資料集；Go2 實機抽測 392 段成功率 96.7% | [GitHub](https://github.com/Amap-Robotics/Quad-Imaginarium) | CoRL 2026 |
 | 2026-11 | [QWM](https://arxiv.org/abs/2604.08780) · [專案頁](https://modanesh.github.io/papers/qwm/) | Mila / McGill / ETH Zurich | 以尺度不變的形態特徵條件化單一生成式動力學模型，策略完全在 world model 想像中訓練 | 未見過的四足形態零樣本轉移，同樣形態資訊的 model-free 策略則退化（作者自報） | [GitHub](https://github.com/modanesh/QWM) | CoRL 2026 |
 | 2026-11 | [LoComposition](https://arxiv.org/abs/2606.15896) · [專案頁](https://sites.google.com/view/locomposition) | TUM / Univ. of Tübingen / MPI-IS | 任務用獎勵、操作限制用約束、步態交給能量最小化、地形適應交給外感知，去掉所有步態先驗 | 地形通過率相當下運輸成本降 56%、限制違反降 96%；Go2 + LiDAR 高程圖零樣本實機 | 未公開 | CoRL 2026 |
