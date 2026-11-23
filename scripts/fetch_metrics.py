@@ -34,10 +34,18 @@ def fetch_papers(ids):
     headers = {"Content-Type": "application/json"}
     if key := os.environ.get("S2_API_KEY"):
         headers["x-api-key"] = key
-    res = []
-    for k in range(0, len(ids), 500):
-        body = json.dumps({"ids": [s2_id(i) for i in ids[k:k + 500]]}).encode()
-        res += fetch_json(S2_URL, data=body, headers=headers)
+
+    def post(s2ids):  # S2 batch 一次最多 500 筆
+        out = []
+        for k in range(0, len(s2ids), 500):
+            out += fetch_json(S2_URL, data=json.dumps({"ids": s2ids[k:k + 500]}).encode(), headers=headers)
+        return out
+
+    res = post([s2_id(i) for i in ids])
+    # 少數論文（例：2307.12981 3D-LLM）在 S2 沒掛 arXiv ID，只掛 arXiv 的 DOI
+    miss = [n for n, (i, p) in enumerate(zip(ids, res)) if p is None and not i.startswith("DOI:")]
+    for n, p in zip(miss, post([f"DOI:10.48550/arXiv.{ids[n]}" for n in miss])):
+        res[n] = p
     return {
         i: (None if p is None else {k: p[k] for k in ("title", "year", "venue", "citationCount")})
         for i, p in zip(ids, res)

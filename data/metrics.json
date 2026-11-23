@@ -1579,7 +1579,12 @@
    "venue": "Computer Vision and Pattern Recognition",
    "citationCount": 1217
   },
-  "2307.12981": null,
+  "2307.12981": {
+   "title": "3D-LLM: Injecting the 3D World into Large Language Models",
+   "year": 2023,
+   "venue": "Neural Information Processing Systems",
+   "citationCount": 708
+  },
   "2112.10482": {
    "title": "ScanQA: 3D Question Answering for Spatial Scene Understanding",
    "year": 2021,
