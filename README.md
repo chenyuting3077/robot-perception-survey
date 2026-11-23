@@ -43,7 +43,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM、Real2Sim�
 - **期刊**：Science Robotics、T-RO、IJRR、RA-L、T-ASE、JFR、TPAMI、IJCV
 - **會議**（接收論文公布時）：RSS、CoRL、ICRA、IROS、CVPR、ICCV、ECCV、3DV、SIGGRAPH、WACV、NeurIPS、ICLR、ICML；EMNLP、ACL（只看 VLN）
 
-最後更新：2026-11-16
+最後更新：2026-11-23
 
 ## 目錄
 
