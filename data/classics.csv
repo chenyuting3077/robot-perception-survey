@@ -380,6 +380,7 @@ vln,2605.30280,Qwen-VLA,Qwen（Alibaba）,arXiv,,,,,,單一 VLA 同時涵蓋操�
 spatial,2602.14979,RynnBrain,Alibaba DAMO,arXiv,alibaba-damo-academy/RynnBrain,https://alibaba-damo-academy.github.io/RynnBrain.github.io/,,,,開源的具身基礎模型，著重物理情境下的推理與規劃，可再訓練成不同機器人任務的骨幹,
 reconstruction,2603.03269,LoGeR,Google DeepMind / UC Berkeley,arXiv,Junyi42/LoGeR,https://loger-project.github.io/,,,,混合記憶架構，訓練只用 128 幀，推論可到上萬幀；KITTI ATE 降超過 74%,feed-forward 重建
 reconstruction,2601.02281,InfiniteVGGT,SJTU,arXiv,AutoLab-SAI-SJTU/InfiniteVGGT,,,,,讓 VGGT 類模型處理無限長串流，並提出約 1 萬幀的 Long3D benchmark,feed-forward 重建
+reconstruction,2512.10685,SHARP,Apple,ICLR 2026,apple-aiml-research/ml-sharp,https://apple-aiml-research.github.io/ml-sharp/,,推薦,,單張照片一次前向回歸公制尺度 3DGS，標準 GPU 上不到一秒、可即時渲染鄰近視角,feed-forward 重建
 vision,2603.14482,V-JEPA 2.1,Meta FAIR / Zaragoza,ECCV 2026,facebookresearch/vjepa2,,,,,改善影片自監督學習的稠密特徵，同時提升世界模型、導航與深度估計；TartanDrive ATE 5.687,
 det3d,2603.03283,Utonia,HKU / CUHK / Xiaomi,ICML 2026,Pointcept/Utonia,https://pointcept.github.io/Utonia/,,,,用單一編碼器處理不同來源的點雲，朝點雲基礎模型發展，特徵也可供 VLA 與空間推理使用,
 real2sim,2605.00080,World Model for Robot Learning Survey,NTU,arXiv,NTUMARS/Awesome-World-Model-for-Robotics-Policy,https://ntumars.github.io/wm-robot-survey/,,,,整理機器人學習用的世界模型典範、應用與挑戰，並持續維護論文清單,

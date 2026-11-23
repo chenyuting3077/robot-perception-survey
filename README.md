@@ -389,6 +389,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM、Real2Sim�
 | 新興 | 機構、推薦 | 2026 | [ScaRF-SLAM](https://arxiv.org/abs/2606.00307) | Oxford ORI / Georgia Tech | 定位交給傳統視覺 SLAM，feed-forward 幾何模型只做深度與稠密重建，再以跨幀與子地圖的尺度一致性最佳化串起來；單目、雙目、多相機、有無 IMU 都能套 | RA-L 2026 | 3 | [294](https://github.com/ori-drs/ScaRF-SLAM) |
 | 新興 | 獲獎 | 2026 | [VGGT-Ω](https://arxiv.org/abs/2605.15195) · [專案頁](https://vggt-omega.github.io/) | Meta / Oxford VGG | 驗證 feed-forward 重建品質隨模型與資料規模可預測地提升，並擴展到動態場景 | CVPR 2026<br>入圍 Best Paper | 18 | 未公開 |
 | 新興 | 獲獎 | 2026 | [LSRM](https://arxiv.org/abs/2604.05182) | Meta Reality Labs | 大幅擴大 transformer 上下文中的物件與影像 token，讓 feed-forward 物件重建逼近稠密最佳化品質 | ECCV 2026<br>🏆 Best Paper Honorable Mention | 3 | 未公開 |
+| 新興 | 推薦 | 2025 | [SHARP](https://arxiv.org/abs/2512.10685) · [專案頁](https://apple-aiml-research.github.io/ml-sharp/) | Apple | 單張照片一次前向回歸公制尺度 3DGS，標準 GPU 上不到一秒、可即時渲染鄰近視角 | ICLR 2026 | 0 | [0](https://github.com/apple-aiml-research/ml-sharp) |
 
 #### SfM 與相機位姿
 
