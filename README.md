@@ -43,7 +43,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM、Real2Sim�
 - **期刊**：Science Robotics、T-RO、IJRR、RA-L、T-ASE、JFR、TPAMI、IJCV
 - **會議**（接收論文公布時）：RSS、CoRL、ICRA、IROS、CVPR、ICCV、ECCV、3DV、SIGGRAPH、WACV、NeurIPS、ICLR、ICML；EMNLP、ACL（只看 VLN）
 
-最後更新：2026-11-23
+最後更新：2026-11-26
 
 ## 目錄
 
@@ -446,6 +446,8 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM、Real2Sim�
 
 | 日期 | 論文 | 機構 | 重點 | 數據 | 程式碼 | 來源 |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-11 | [WildAnySplat](https://arxiv.org/abs/2611.31023) · [專案頁](https://wildanysplat.github.io/) | Huawei Noah's Ark Lab | 師生框架：教師看乾淨影像、學生看含遮擋物與光照變化的野外影像，學出一致的 feed-forward 3DGS 表示 | | 未公開 | SIGGRAPH Asia 2026 |
+| 2026-11 | [MoGe-4D](https://arxiv.org/abs/2611.32198) · [專案頁](https://microsoft.github.io/MoGe-4D) | USTC / Microsoft Research / UCAS / Tsinghua | feed-forward 以成對的 allocentric、egocentric 動態點圖查詢統一幾何與運動，context encoder 快取全域特徵、輕量 query encoder 解碼稠密點圖 | | 未公開 | arXiv |
 | 2026-11 | [Anchor3R](https://arxiv.org/abs/2606.05035) | UCAS / Horizon Robotics / HKUST | 以當前幀為座標中心預測視窗相對位姿與局部幾何，重疊預測組成相對位姿圖，做線上更新與含回環的運動平均 | 只用 48 幀訓練，可處理超過 10,000 幀串流且 GPU 記憶體有界 | [GitHub](https://github.com/polar-explorer/Anchor3R) | CoRL 2026 |
 | 2026-10 | [ACE-Zero + PGO](https://arxiv.org/abs/2610.35501) · [專案頁](https://eldentse.github.io/visual_localization_pgo_public/) | dConstruct Robotics / NUS | 在 ACE-Zero 上加 pose graph optimization，由預測的 scene coordinate 取相對位姿，並以對極與光流一致性估信心來抑制錯誤修正 |  | 未公開 | CVPR 2026 |
 | 2026-09 | [FILT3R](https://arxiv.org/abs/2603.18493) | KAIST | 串流重建的狀態更新改用 token 空間的 Kalman 式增益，免訓練即可外掛，改善長序列穩定度 |  | [GitHub](https://github.com/jinotter3/FILT3R) | ECCV 2026 |
